@@ -7,3 +7,5 @@
 
 library(covr)
 cov <- package_coverage("CovrJenkins")
+cov
+as.data.frame(cov)
