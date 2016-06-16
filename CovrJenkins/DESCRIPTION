@@ -1,0 +1,10 @@
+Package: CovrJenkins
+Type: Package
+Title: Some package to use covr and test Jenkins integration
+Version: 0.0-1
+Date: 2016-06-16
+Author: Willem Ligtenberg
+Maintainer: Willem Ligtenberg <willem.ligtenberg@openanalytics.eu>
+Description: No interesting stuff happens here...
+License: GPL-3
+Suggests: testthat
