@@ -156,7 +156,6 @@ generateXML <- function(cov, filename = 'cobertura.xml'){
           parent = fun)
       for(i in seq_len(nrow(df[df$functions == fname, ]))){
         line <- df[df$functions == fname, ][i, ]
-        print(line)
         l <- newXMLNode(
             name = "line", 
             attrs = c(
@@ -165,6 +164,20 @@ generateXML <- function(cov, filename = 'cobertura.xml'){
                 branch = "false"),
             parent = ls)
       }
+    }
+    # Add lines
+    ls2 <- newXMLNode(
+        name = "lines", 
+        parent = cl)
+    for(i in seq_len(nrow(df))){
+      line <- df[i, ]
+      l <- newXMLNode(
+          name = "line", 
+          attrs = c(
+              number = as.character(line$line),
+              hits = as.character(line$value),
+              branch = "false"),
+          parent = ls2)
     }
   }
 
